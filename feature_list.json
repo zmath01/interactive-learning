@@ -45,8 +45,8 @@
       "name": "Harness wiring + git init",
       "description": "AGENTS.md, feature_list.json, progress.md, session-handoff.md, init.sh, scripts/verify.js; local git repo + initial commit (no push)",
       "dependencies": ["feat-005"],
-      "status": "in-progress",
-      "evidence": ""
+      "status": "completed",
+      "evidence": "AGENTS.md/feature_list.json/progress.md/session-handoff.md/init.sh/scripts/verify.js in place; validate-harness.mjs --target . = 100/100; local git repo (branch main) initial commit 5a92bae (not pushed)"
     }
   ]
 }

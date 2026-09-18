@@ -21,7 +21,11 @@ Built the full v1 of the bilingual Learning Interactives site.
 - Harness: `AGENTS.md`, `feature_list.json`, `init.sh`, `scripts/verify.js`.
 
 **Verification**
-- `./init.sh` → `node scripts/verify.js`: all structural + bilingual + Pages checks pass.
+- `init.sh` → `node scripts/verify.js`: 107/107 checks pass.
+- `validate-harness.mjs --target .`: 100/100 (all five subsystems).
+
+**Git**
+- Local repo initialized (branch `main`), initial commit `5a92bae`. Not pushed.
 
 **Known limitations / next**
 - Builder does not author new `simulation` interactives yet (only quiz/fillblank/matching);
