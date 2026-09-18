@@ -1,0 +1,219 @@
+[
+  {
+    "id": "projectile-motion",
+    "type": "simulation",
+    "title": { "en": "Projectile Motion", "zh": "抛体运动" },
+    "subject": { "en": "Physics", "zh": "物理" },
+    "intro": {
+      "en": "Adjust the launch angle and speed so the projectile lands exactly on the target flag. Use the range formula as a guide.",
+      "zh": "调整发射角度和速度，使抛体正好落在目标旗帜处。可用射程公式作为参考。"
+    },
+    "toolbox": {
+      "en": "Range R = v² · sin(2θ) / g. Time of flight T = 2v·sin(θ)/g.",
+      "zh": "射程 R = v² · sin(2θ) / g。飞行时间 T = 2v·sin(θ)/g。"
+    },
+    "levels": [
+      {
+        "prompt": {
+          "en": "Gravity g = 9.8 m/s². Land the projectile on the target at 50 m. Find a launch angle θ and speed v.",
+          "zh": "重力加速度 g = 9.8 m/s²。使抛体落在 50 m 处的目标上。求发射角 θ 与速度 v。"
+        },
+        "config": { "kind": "projectile", "gravity": 9.8, "target": 50, "speedRange": [10, 45], "angleRange": [10, 80] },
+        "hints": [
+          { "en": "The maximum range for a given speed happens at θ = 45°.", "zh": "给定速度下，最大射程出现在 θ = 45°。" },
+          { "en": "Pick θ = 45°, then solve 50 = v² / 9.8 for v² ≈ 490, so v ≈ 22.1 m/s.", "zh": "取 θ = 45°，则 50 = v² / 9.8，得 v² ≈ 490，故 v ≈ 22.1 m/s。" }
+        ],
+        "solution": {
+          "en": "At θ = 45°, sin(2θ) = 1, so R = v² / g. Set v² = R·g = 50·9.8 = 490 → v ≈ 22.1 m/s. Any (θ, v) with v²·sin(2θ) = 490 works.",
+          "zh": "当 θ = 45° 时 sin(2θ) = 1，故 R = v² / g。令 v² = R·g = 50×9.8 = 490 → v ≈ 22.1 m/s。任何满足 v²·sin(2θ) = 490 的 (θ, v) 均可。"
+        }
+      },
+      {
+        "prompt": {
+          "en": "Gravity g = 9.8 m/s². Reach the farther target at 90 m.",
+          "zh": "重力加速度 g = 9.8 m/s²。击中更远的 90 m 目标。"
+        },
+        "config": { "kind": "projectile", "gravity": 9.8, "target": 90, "speedRange": [10, 45], "angleRange": [10, 80] },
+        "hints": [
+          { "en": "Max range at 45° with v=45 m/s is 45²/9.8 ≈ 206 m, so 90 m is reachable.", "zh": "45°、v=45 m/s 时最大射程约 45²/9.8 ≈ 206 m，因此 90 m 可达。" },
+          { "en": "Try θ = 45° and v = √(90·9.8) ≈ 29.7 m/s.", "zh": "取 θ = 45°，v = √(90×9.8) ≈ 29.7 m/s。" }
+        ],
+        "solution": {
+          "en": "v² = R·g = 90·9.8 = 882 → v ≈ 29.7 m/s at θ = 45°. Many nearby (θ, v) combinations also land on 90 m.",
+          "zh": "v² = R·g = 90×9.8 = 882 → v ≈ 29.7 m/s（θ=45°）。附近许多 (θ, v) 组合也能落在 90 m 处。"
+        }
+      },
+      {
+        "prompt": {
+          "en": "Now on the Moon: g = 1.62 m/s². Land on the target at 80 m.",
+          "zh": "现在在月球上：g = 1.62 m/s²。落在 80 m 处的目标。"
+        },
+        "config": { "kind": "projectile", "gravity": 1.62, "target": 80, "speedRange": [10, 45], "angleRange": [10, 80] },
+        "hints": [
+          { "en": "Lower gravity means much farther range for the same speed.", "zh": "重力更小，相同速度下射程更远。" },
+          { "en": "At θ = 45°, v = √(80·1.62) ≈ 11.4 m/s.", "zh": "θ = 45° 时，v = √(80×1.62) ≈ 11.4 m/s。" }
+        ],
+        "solution": {
+          "en": "v² = R·g = 80·1.62 = 129.6 → v ≈ 11.4 m/s at θ = 45°. Compare with Earth: far less speed needed for the same distance.",
+          "zh": "v² = R·g = 80×1.62 = 129.6 → v ≈ 11.4 m/s（θ=45°）。与地球相比，相同距离所需速度小得多。"
+        }
+      }
+    ]
+  },
+  {
+    "id": "symmetrical-opposites",
+    "type": "simulation",
+    "title": { "en": "Symmetrical Opposites", "zh": "对称相反数" },
+    "subject": { "en": "Mathematics", "zh": "数学" },
+    "intro": {
+      "en": "Place the red and blue rovers so they sit at equal distances on opposite sides of the midpoint. This mirrors a Google example of guided discovery on a number line.",
+      "zh": "将红色与蓝色探测车放置在中点两侧、距中点相等的位置。这复现了 Google 一个关于数轴的引导式探索示例。"
+    },
+    "toolbox": {
+      "en": "Symmetry about midpoint m: red = m − d, blue = m + d for some distance d > 0.",
+      "zh": "关于中点 m 对称：存在 d > 0，使 红 = m − d，蓝 = m + d。"
+    },
+    "levels": [
+      {
+        "prompt": {
+          "en": "Midpoint = 0. Place the rovers symmetrically (e.g. at −3 and +3).",
+          "zh": "中点 = 0。对称放置探测车（例如 −3 与 +3）。"
+        },
+        "config": { "kind": "numberline", "midpoint": 0, "min": -10, "max": 10, "offset": 3 },
+        "hints": [
+          { "en": "Equal distance from 0 means red = −blue.", "zh": "距 0 相等意味着 红 = −蓝。" },
+          { "en": "Set red = −3 and blue = +3 (or any ±d with d>0).", "zh": "设 红 = −3，蓝 = +3（或任意 ±d，d>0）。" }
+        ],
+        "solution": {
+          "en": "Any pair with red = −d and blue = +d (d>0) is symmetric about 0. Example: −3 and +3.",
+          "zh": "任取 红 = −d、蓝 = +d（d>0）即关于 0 对称。例如 −3 与 +3。"
+        }
+      },
+      {
+        "prompt": {
+          "en": "Midpoint = 2. Place the rovers symmetrically about 2 (e.g. −2 and +6).",
+          "zh": "中点 = 2。关于 2 对称放置（例如 −2 与 +6）。"
+        },
+        "config": { "kind": "numberline", "midpoint": 2, "min": -10, "max": 10, "offset": 4 },
+        "hints": [
+          { "en": "The midpoint is the average: (red + blue)/2 = 2.", "zh": "中点是平均值：(红 + 蓝)/2 = 2。" },
+          { "en": "Set red = −2 and blue = 6 (each 4 away from 2).", "zh": "设 红 = −2，蓝 = 6（各距 2 为 4）。" }
+        ],
+        "solution": {
+          "en": "Symmetry about 2 means red = 2 − d, blue = 2 + d. Example: −2 and 6 (d = 4).",
+          "zh": "关于 2 对称即 红 = 2 − d，蓝 = 2 + d。例如 −2 与 6（d = 4）。"
+        }
+      },
+      {
+        "prompt": {
+          "en": "Midpoint = −1. Place the rovers symmetrically about −1 (e.g. −6 and +4).",
+          "zh": "中点 = −1。关于 −1 对称放置（例如 −6 与 +4）。"
+        },
+        "config": { "kind": "numberline", "midpoint": -1, "min": -10, "max": 10, "offset": 5 },
+        "hints": [
+          { "en": "The midpoint is the average: (red + blue)/2 = −1.", "zh": "中点是平均值：(红 + 蓝)/2 = −1。" },
+          { "en": "Set red = −6 and blue = 4 (each 5 away from −1).", "zh": "设 红 = −6，蓝 = 4（各距 −1 为 5）。" }
+        ],
+        "solution": {
+          "en": "Symmetry about −1 means red = −1 − d, blue = −1 + d. Example: −6 and 4 (d = 5).",
+          "zh": "关于 −1 对称即 红 = −1 − d，蓝 = −1 + d。例如 −6 与 4（d = 5）。"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fraction-addition",
+    "type": "fillblank",
+    "title": { "en": "Fraction Addition", "zh": "分数加法" },
+    "subject": { "en": "Mathematics", "zh": "数学" },
+    "intro": {
+      "en": "Add the two fractions and enter the exact value. You may enter a decimal or a fraction like '3/4'. Tiered hints and a worked solution are provided.",
+      "zh": "将两个分数相加并输入精确值。可输入小数或如 “3/4” 的分数。提供分级提示与解题过程。"
+    },
+    "toolbox": {
+      "en": "Find a common denominator, add numerators, then simplify.",
+      "zh": "先通分，再加分子，最后约分。"
+    },
+    "levels": [
+      {
+        "prompt": { "en": "Compute 1/2 + 1/2.", "zh": "计算 1/2 + 1/2。" },
+        "config": { "kind": "fill", "answer": 1, "tolerance": 0.001 },
+        "hints": [
+          { "en": "Same denominator: 1/2 + 1/2 = (1+1)/2 = 2/2.", "zh": "同分母：1/2 + 1/2 = (1+1)/2 = 2/2。" },
+          { "en": "2/2 = 1.", "zh": "2/2 = 1。" }
+        ],
+        "solution": { "en": "1/2 + 1/2 = 2/2 = 1.", "zh": "1/2 + 1/2 = 2/2 = 1。" }
+      },
+      {
+        "prompt": { "en": "Compute 1/3 + 1/6.", "zh": "计算 1/3 + 1/6。" },
+        "config": { "kind": "fill", "answer": 0.5, "tolerance": 0.001 },
+        "hints": [
+          { "en": "Common denominator 6: 1/3 = 2/6.", "zh": "通分至 6：1/3 = 2/6。" },
+          { "en": "2/6 + 1/6 = 3/6 = 1/2 = 0.5.", "zh": "2/6 + 1/6 = 3/6 = 1/2 = 0.5。" }
+        ],
+        "solution": { "en": "1/3 + 1/6 = 2/6 + 1/6 = 3/6 = 1/2 = 0.5.", "zh": "1/3 + 1/6 = 2/6 + 1/6 = 3/6 = 1/2 = 0.5。" }
+      },
+      {
+        "prompt": { "en": "Compute 2/3 + 3/4.", "zh": "计算 2/3 + 3/4。" },
+        "config": { "kind": "fill", "answer": 1.4166666667, "tolerance": 0.001 },
+        "hints": [
+          { "en": "Common denominator 12: 2/3 = 8/12, 3/4 = 9/12.", "zh": "通分至 12：2/3 = 8/12，3/4 = 9/12。" },
+          { "en": "8/12 + 9/12 = 17/12 = 1 5/12 ≈ 1.4167.", "zh": "8/12 + 9/12 = 17/12 = 1 5/12 ≈ 1.4167。" }
+        ],
+        "solution": { "en": "2/3 + 3/4 = 8/12 + 9/12 = 17/12 ≈ 1.4167.", "zh": "2/3 + 3/4 = 8/12 + 9/12 = 17/12 ≈ 1.4167。" }
+      }
+    ]
+  },
+  {
+    "id": "area-perimeter-explorer",
+    "type": "simulation",
+    "title": { "en": "Area & Perimeter Explorer", "zh": "面积与周长探索" },
+    "subject": { "en": "Mathematics", "zh": "数学" },
+    "intro": {
+      "en": "Drag the sliders to resize the rectangle. Compute the requested quantity (area or perimeter) and check your answer.",
+      "zh": "拖动滑块改变矩形大小。计算要求的量（面积或周长）并检查你的答案。"
+    },
+    "toolbox": {
+      "en": "Area = width × height. Perimeter = 2 × (width + height).",
+      "zh": "面积 = 宽 × 高。周长 = 2 × (宽 + 高)。"
+    },
+    "levels": [
+      {
+        "prompt": {
+          "en": "The rectangle shows width and height. What is its AREA?",
+          "zh": "矩形显示了宽和高。它的面积是多少？"
+        },
+        "config": { "kind": "area", "width": 6, "height": 4, "metric": "area", "widthRange": [2, 12], "heightRange": [2, 12] },
+        "hints": [
+          { "en": "Area = width × height.", "zh": "面积 = 宽 × 高。" },
+          { "en": "6 × 4 = 24.", "zh": "6 × 4 = 24。" }
+        ],
+        "solution": { "en": "Area = 6 × 4 = 24 square units.", "zh": "面积 = 6 × 4 = 24 平方单位。" }
+      },
+      {
+        "prompt": {
+          "en": "Resize as you like, then give the PERIMETER of the shown rectangle.",
+          "zh": "随意调整大小，然后给出所示矩形的周长。"
+        },
+        "config": { "kind": "area", "width": 7, "height": 5, "metric": "perimeter", "widthRange": [2, 12], "heightRange": [2, 12] },
+        "hints": [
+          { "en": "Perimeter = 2 × (width + height).", "zh": "周长 = 2 × (宽 + 高)。" },
+          { "en": "2 × (7 + 5) = 24.", "zh": "2 × (7 + 5) = 24。" }
+        ],
+        "solution": { "en": "Perimeter = 2 × (7 + 5) = 24 units.", "zh": "周长 = 2 × (7 + 5) = 24 单位。" }
+      },
+      {
+        "prompt": {
+          "en": "For the shown rectangle, what is its AREA?",
+          "zh": "对于所示矩形，它的面积是多少？"
+        },
+        "config": { "kind": "area", "width": 9, "height": 3, "metric": "area", "widthRange": [2, 12], "heightRange": [2, 12] },
+        "hints": [
+          { "en": "Area = width × height.", "zh": "面积 = 宽 × 高。" },
+          { "en": "9 × 3 = 27.", "zh": "9 × 3 = 27。" }
+        ],
+        "solution": { "en": "Area = 9 × 3 = 27 square units.", "zh": "面积 = 9 × 3 = 27 平方单位。" }
+      }
+    ]
+  }
+]

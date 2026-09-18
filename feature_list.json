@@ -1,0 +1,52 @@
+{
+  "features": [
+    {
+      "id": "feat-001",
+      "name": "Scaffold + i18n + language toggle",
+      "description": "Project structure, index.html SPA shell, i18n.js/data i18n.json, EN|中文 toggle persisted in localStorage",
+      "dependencies": [],
+      "status": "completed",
+      "evidence": "index.html, assets/js/i18n.js, data/i18n.json; toggle wired in app.js; verify.js i18n parity check passes"
+    },
+    {
+      "id": "feat-002",
+      "name": "Interactive rendering engine",
+      "description": "engine.js renders spec -> DOM: simulation (projectile/numberline/area), quiz, fillblank, matching; leveled with tiered hints, feedback, worked solutions",
+      "dependencies": ["feat-001"],
+      "status": "completed",
+      "evidence": "assets/js/engine.js; ./init.sh passes"
+    },
+    {
+      "id": "feat-003",
+      "name": "Four bilingual sample interactives",
+      "description": "Projectile Motion, Symmetrical Opposites, Fraction Addition, Area & Perimeter Explorer; each bilingual, leveled, hints + solutions",
+      "dependencies": ["feat-002"],
+      "status": "completed",
+      "evidence": "data/interactives.json; verify.js bilingual coverage checks pass"
+    },
+    {
+      "id": "feat-004",
+      "name": "Teacher builder (generative UI)",
+      "description": "builder.js: form -> spec -> live preview (same engine) -> save to localStorage / export JSON; quiz, fillblank, matching",
+      "dependencies": ["feat-002"],
+      "status": "completed",
+      "evidence": "assets/js/builder.js, app.js #/builder route"
+    },
+    {
+      "id": "feat-005",
+      "name": "GitHub Pages readiness + bilingual README",
+      "description": ".nojekyll, relative asset paths, bilingual README with local-run and Pages deploy steps",
+      "dependencies": ["feat-001"],
+      "status": "completed",
+      "evidence": ".nojekyll, README.md; verify.js Pages checks pass"
+    },
+    {
+      "id": "feat-006",
+      "name": "Harness wiring + git init",
+      "description": "AGENTS.md, feature_list.json, progress.md, session-handoff.md, init.sh, scripts/verify.js; local git repo + initial commit (no push)",
+      "dependencies": ["feat-005"],
+      "status": "in-progress",
+      "evidence": ""
+    }
+  ]
+}
